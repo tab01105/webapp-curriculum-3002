@@ -9,9 +9,10 @@ object LockObjectMain2 extends App {
 }
 
 object HashDigestProvider2 {
-  private[this] val md = MessageDigest.getInstance("SHA-1")
+//  private[this] val md = MessageDigest.getInstance("SHA-1")
 
   def digest(str: String): List[Byte] = {
+    val md = MessageDigest.getInstance("SHA-1")
     md.reset()
     md.update(str.getBytes)
     md.digest().toList
